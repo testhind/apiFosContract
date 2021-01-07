@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ProjectGuid>{168706C5-3E11-4960-87B0-E61E5FB29029}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup Label="Package References">
+        <PackageReference Include="Moq.Dapper" Version="1.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Infrastructure\Cds.APITemplate.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

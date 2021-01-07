@@ -1,0 +1,23 @@
+<Project>
+
+  <Import Project="build\sources.props" Condition="Exists('build\sources.props')" />
+
+  <PropertyGroup Label="Project">
+    <Product>Cdiscount APITemplate</Product>
+    <RootNamespace>Cds.APITemplate</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Compilation">
+    <Configurations>Debug;Release;CodeAnalysis</Configurations>
+    <DebugType Condition=" '$(Configuration)' == 'CodeAnalysis' ">Full</DebugType>
+    <DefineConstants Condition=" '$(Configuration)' == 'CodeAnalysis' ">DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);NU1603;NU5105</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Sign">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)build\Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+</Project>

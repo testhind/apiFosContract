@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <ProjectGuid>{1787084B-9A87-483E-AEDB-CA8554D9F7F5}</ProjectGuid>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup Label="Project References">
+        <ProjectReference Include="..\..\..\src\Api\Cds.APITemplate.Api.csproj" />
+        <ProjectReference Include="..\..\..\src\Domain\Cds.APITemplate.Domain.csproj" />
+        <ProjectReference Include="..\..\..\src\Infrastructure\Cds.APITemplate.Infrastructure.csproj" />
+    </ItemGroup>
+
+</Project>

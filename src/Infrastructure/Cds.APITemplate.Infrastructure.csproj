@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProjectGuid>{5655E20A-E995-4718-852D-B94D44CD84BB}</ProjectGuid>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.Common" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.3" />
+  </ItemGroup>
+
+  <ItemGroup Label="Project References">
+    <ProjectReference Include="..\Domain\Cds.APITemplate.Domain.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <SharedRuleSetPath>\\CLO-NAS\cds-informatique\00_Partage_Sécurisé\dotnet\sonar\sonar-platinium-1.0.ruleset</SharedRuleSetPath>
+    <LocalRuleSetPath>..\..\.sonarlint\sonar-platinium-1.0.ruleset</LocalRuleSetPath>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition="Exists('$(SharedRuleSetPath)')">
+      <PropertyGroup Condition="'$(CodeAnalysisRuleSet)' == '' ">
+        <CodeAnalysisRuleSet>$(SharedRuleSetPath)</CodeAnalysisRuleSet>
+      </PropertyGroup>
+    </When>
+    <When Condition="Exists('$(LocalRuleSetPath)')">
+      <PropertyGroup Condition="'$(CodeAnalysisRuleSet)' == '' ">
+        <CodeAnalysisRuleSet>$(LocalRuleSetPath)</CodeAnalysisRuleSet>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  
+</Project>
